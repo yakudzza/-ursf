@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackPoint - Детали хакатона</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/dashboard.css">
+    <link rel="stylesheet" href="src/hackathon-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="createTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Создание команды</h2>
+            <form id="createTeamForm">
+                <div class="form-group">
+                    <label for="teamName">Название команды:</label>
+                    <input type="text" id="teamName" name="teamName" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Создать команду</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="joinTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вступить в команду</h2>
+            <div id="teamsList" class="teams-list">
+                <!-- Список команд будет загружен динамически -->
+            </div>
+        </div>
+    </div>
+
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-code"></i>
+                <h1>HackPoint</h1>
+            </div>
+            
+            <nav class="navigation">
+                <a href="dashboard.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="user-details">
+                        <span id="userEmail"></span>
+                    </div>
+                </div>
+                <button onclick="handleLogout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Выйти
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="hackathon-details-container">
+        <div id="hackathonDetails" class="hackathon-details">
+            <!-- Детали хакатона будут загружены сюда динамически -->
+        </div>
+    </main>
+
+    <script src="src/hackathon-details.js"></script>
+</body>
+</html> 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auth Page</title>
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-toggle">
+            <button id="loginBtn" class="toggle-btn active">Вход</button>
+            <button id="registerBtn" class="toggle-btn">Регистрация</button>
+        </div>
+
+        <div id="loginForm" class="form-container">
+            <form onsubmit="return handleLogin(event)">
+                <label for="loginEmail">Почта</label>
+                <input type="email" placeholder="example@gmail.com" id="loginEmail" required>
+                
+                <label for="loginPassword">Пароль</label>
+                <input type="password" placeholder="qwerty123" id="loginPassword" required>
+                
+                <button type="submit" class="submit-btn">Войти</button>
+            </form>
+        </div>
+
+        <div id="registerForm" class="form-container hidden">
+            <form onsubmit="return handleRegister(event)">
+                <label for="regEmail">Почта</label>
+                <input type="email" placeholder="example@gmail.com" id="regEmail" required>
+                
+                <label for="regPassword">Пароль</label>
+                <input type="password" placeholder="qwerty123" id="regPassword" required>
+                
+                <label for="firstname">Имя</label>
+                <input type="text" placeholder="Иван" id="firstname" required>
+                
+                <label for="lastname">Фамилия</label>
+                <input type="text" placeholder="Иванов" id="lastname" required>
+                
+                <label for="patronymic">Отчество</label>
+                <input type="text" placeholder="Иванович" id="patronymic">
+                
+                <label for="phoneNumber">Номер телефона</label>
+                <input type="tel" placeholder="+79999999999" id="phoneNumber" required>
+                <div id="phoneError" class="error-message">Введите корректный номер телефона в формате +7XXXXXXXXXX</div>
+                
+                <label for="typeDev">Специализация</label>
+                <select id="typeDev" required>
+                    <option value="FRONTEND">Frontend Developer</option>
+                    <option value="BACKEND">Backend Developer</option>
+                    <option value="FULLSTACK">Fullstack Developer</option>
+                    <option value="DESIGNER">Designer</option>
+                </select>
+                
+                <label for="additionalInfo">Дополнительная информация</label>
+                <textarea id="additionalInfo" placeholder="О себе"></textarea>
+                
+                <button type="submit" class="submit-btn">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>

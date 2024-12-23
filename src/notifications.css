@@ -1,0 +1,106 @@
+.notifications-container {
+    max-width: 95%;
+    min-width: 1200px;
+    margin: 80px auto 2rem;
+    padding: 2rem;
+    min-height: calc(100vh - 120px);
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#teamRequests {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: calc(100vh - 200px);
+}
+
+.no-requests {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 200px);
+    color: #666;
+    font-size: 1.2rem;
+}
+
+.notification {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.notification-info {
+    flex: 1;
+}
+
+.notification-text {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.notification-details {
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    gap: 15px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.approve-btn, .reject-btn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.approve-btn {
+    background-color: #28a745;
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #218838;
+}
+
+.reject-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.reject-btn:hover {
+    background-color: #c82333;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .notifications-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .notification {
+        padding: 12px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .approve-btn, .reject-btn {
+        width: 100%;
+    }
+} 

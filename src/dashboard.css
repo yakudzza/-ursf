@@ -1,0 +1,773 @@
+.dashboard-header {
+    background-color: var(--primary-color);
+    padding: 0.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.dashboard-container {
+    padding: 2rem;
+    max-width: 1280px;
+    margin: 80px auto 0;
+    width: 100%;
+    min-height: calc(100vh - 80px);
+    position: relative;
+}
+
+.header-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-section i {
+    font-size: 2rem;
+    color: var(--accent-color);
+}
+
+.logo-section h1 {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin: 0;
+}
+
+.navigation {
+    display: flex;
+    gap: 2rem;
+}
+
+.navigation a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navigation a:hover {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.navigation a.active {
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.user-info i {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+}
+
+#userEmail {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.user-type {
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.logout-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #6a9ac4;
+}
+
+.logout-btn i {
+    font-size: 1rem;
+}
+
+.filters {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.filters input,
+.filters select {
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+}
+
+.hackathons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.hackathon-card {
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hackathon-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-card h2 {
+    margin-top: 0;
+    color: var(--text-color);
+}
+
+.hackathon-card .dates {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.hackathon-card .description {
+    margin: 1rem 0;
+}
+
+.hackathon-card .status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status.active {
+    background-color: #a8e6cf;
+    color: #2d6a4f;
+}
+
+.status.upcoming {
+    background-color: #ffd3b6;
+    color: #805b3f;
+}
+
+.status.completed {
+    background-color: #ffaaa5;
+    color: #8b0000;
+}
+
+.no-hackathons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    text-align: center;
+    color: #666;
+}
+
+.no-hackathons.hidden {
+    display: none;
+}
+
+.no-hackathons i {
+    font-size: 48px;
+    margin-bottom: 16px;
+    color: #999;
+}
+
+.no-hackathons p {
+    font-size: 18px;
+    margin: 0;
+}
+
+.admin-button {
+    display: none;
+}
+
+.admin-button.visible {
+    display: flex;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.hackathon-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.team-size {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.status {
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.status.announced {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+
+.status.opened-registration {
+    background-color: #a8e6cf;
+    color: #2d6a4f;
+}
+
+.status.closed-registration {
+    background-color: #ffd3b6;
+    color: #805b3f;
+}
+
+.status.completed {
+    background-color: #ffaaa5;
+    color: #8b0000;
+}
+
+.hackathon-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 15px;
+}
+
+.hackathon-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.state {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 30px;
+    color: white;
+    font-weight: bold;
+}
+
+.state-announced {
+    background-color: #ffeeba;
+    color: #856404;
+}
+
+.state-opened_registration {
+    background-color: #c3e6cb;
+    color: #155724;
+}
+
+.state-closed_registration {
+    background-color: #f5c6cb;
+    color: #721c24;
+}
+
+.state-completed {
+    background-color: #d1d1d1;
+    color: #444;
+}
+
+.team-size {
+    margin: 10px 0;
+    color: #666;
+}
+
+.team-size i {
+    margin-right: 5px;
+}
+
+.delete-hackathon-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.delete-hackathon-section h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.delete-hackathon-form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hackathon-select {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.delete-hackathon-btn {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.delete-hackathon-btn:hover {
+    background-color: #c82333;
+}
+
+.create-hackathon-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hackathon-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.submit-btn {
+    background-color: #2196F3;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #1976D2;
+}
+
+.admin-container {
+    max-width: 1280px;
+    margin: 80px auto 2rem;
+    padding: 0 2rem;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 1rem 2rem;
+    background: #f8f9fa;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.tab-button i {
+    font-size: 1.2rem;
+}
+
+.tab-button.active {
+    background: #2196F3;
+    color: white;
+}
+
+.tab-button:hover {
+    background: #1976D2;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Обновляем стили секций */
+.create-hackathon-section,
+.delete-hackathon-section,
+.managers-section {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .admin-container {
+        padding: 0 1rem;
+    }
+
+    .admin-tabs {
+        flex-direction: column;
+    }
+
+    .tab-button {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+.form-group select {
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.form-group select:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.error-message {
+    color: #ff4444;
+    font-size: 0.8rem;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+input.invalid {
+    border-color: #ff4444;
+}
+
+.manager-form input,
+.manager-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.manager-form textarea {
+    height: 60px;
+    resize: vertical;
+}
+
+.manager-form label {
+    display: block;
+    margin-top: 8px;
+    margin-bottom: 4px;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.notifications-button {
+    display: none;
+    position: relative;
+    padding: 0.5rem;
+    color: var(--text-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.notifications-button i {
+    font-size: 1.2rem;
+}
+
+.notifications-button:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* Можно добавить анимацию для иконки при наведении */
+@keyframes bell-shake {
+    0% { transform: rotate(0); }
+    25% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0); }
+}
+
+.notifications-button:hover i {
+    animation: bell-shake 0.5s ease;
+}
+
+.change-state-section {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.change-state-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.change-state-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+}
+
+.change-state-form select:focus {
+    outline: none;
+    border-color: #2196F3;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--secondary-color);
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+.team-info {
+    padding: 20px 0;
+}
+
+.team-info h3 {
+    margin: 0 0 15px 0;
+    color: var(--text-color);
+}
+
+.team-info p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.no-team-message {
+    text-align: center;
+    color: #666;
+    padding: 20px;
+}
+
+/* Обновляем стили для кнопки предложения идеи */
+#suggestIdeaButton {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+#suggestIdeaButton:hover {
+    background-color: #6a9ac4;
+    transform: translateY(-2px);
+}
+
+#suggestIdeaButton i {
+    font-size: 1.2rem;
+}
+
+/* Обновляем стили для модального окна идеи */
+#ideaModal .modal-content {
+    background-color: var(--secondary-color);
+    margin: 10% auto;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+#ideaModal h2 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+#ideaForm .form-group {
+    margin-bottom: 1.5rem;
+}
+
+#ideaForm label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+#ideaForm textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    resize: vertical;
+    min-height: 150px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: white;
+}
+
+#ideaForm textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+#ideaForm button[type="submit"] {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+#ideaForm button[type="submit"]:hover {
+    background-color: #6a9ac4;
+    transform: translateY(-2px);
+}
+
+.close-idea-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-idea-modal:hover {
+    color: #333;
+}
+
+#ideaForm select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: white;
+    margin-bottom: 1rem;
+}
+
+#ideaForm select:focus {
+    outline: none;
+    border-color: var(--accent-color);
+} 

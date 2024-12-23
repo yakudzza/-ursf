@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HackPoint - Уведомления</title>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/dashboard.css">
+    <link rel="stylesheet" href="src/notifications.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="dashboard-header">
+        <div class="header-content">
+            <div class="logo-section">
+                <i class="fas fa-code"></i>
+                <h1>HackPoint</h1>
+            </div>
+            
+            <nav class="navigation">
+                <a href="dashboard.html" class="back-button">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+            </nav>
+
+            <div class="user-section">
+                <div class="user-info">
+                    <i class="fas fa-user-circle"></i>
+                    <div class="user-details">
+                        <span id="userEmail"></span>
+                    </div>
+                </div>
+                <button onclick="handleLogout()" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Выйти
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="notifications-container">
+        <div id="teamRequests">
+            <!-- Notifications will be loaded here -->
+        </div>
+    </main>
+
+    <script src="src/notifications.js"></script>
+</body>
+</html>
